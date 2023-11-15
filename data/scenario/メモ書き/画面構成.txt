@@ -1,0 +1,21 @@
+※画面構成.pngに番号が振ってあります。
+　UIは仮の状態です。
+
+【画面構成】
+大まかに、右と左の二分割になっています。
+
+■画面左 <div class="left-box">
+　クリッカーゲームのメインコンテンツが配置されています。
+
+①アイテムの総所持数が表示されるボックス <div class="total-item">
+②1秒当たりの生産量が表示されるボックス <div class="total-power">
+③クリックすると、アイテムが増加するアイコン <div id="Click_Icon" class="click-icon">
+④一定間隔で出現し、クリックすると、アイテムが増加するボーナスアイコン <div class="bonus-box">
+⑤キャラクターの画像 <div id="Chara" class="chara">
+
+■画面右 <div class="right-box">
+　施設、スキル、強化施設、ストーリーのタブメニューが配置されています。
+　縦スクロールに対応しています。
+
+⑥対応したコンテンツに切り替えるラベル <input id="TAB02-01"/><label for="TAB02-01">
+⑦各コンテンツが表示されるボックス <div class="box-content">

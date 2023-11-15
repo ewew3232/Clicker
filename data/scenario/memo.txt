@@ -1,0 +1,64 @@
+■施設の値段を増やす
+
+値段5の施設
+
+2個目は、5x1.15
+3個目は、5x1.15^2
+
+値段をA
+現在の個数をB
+まとめ買いしたい個数をC
+まとめ買いした時の値段をD
+
+施設B個目の値段は　Ax1.15^(B-1)
+まとめ買いするには、
+
+D =  Ax1.15^(B+1) x ( 1.15^C - 1 ) / 0.15
+
+4個(n)から10個(10-4=k)を買うには
+
+n=4
+k=6
+
+Cn+1(1.15^k - 1) / 0.15
+
+(5x1.15^5)x(1.15^6 - 1) / 0.15 =?
+
+1.15^5=2.0114
+1.15^6=2.3131
+
+(5x2.0114)x(1.3131)  = 13.2058467 
+
+13.2058467/0.15=  88.0390113.
+
+5x1.15^5 + 5x1.15^6 +  5x1.15^7 +  5x1.15^8 +  5x1.15^9 +  5x1.15^10 = 88.0605.
+
+ok
+
+値段をA
+現在の個数をB
+まとめ買いしたい個数をC
+まとめ買いした時の値段をD
+Ax1.15^(B-1)
+D =  Ax1.15^(B+1) x ( 1.15^C - 1 ) / 0.15
+
+次の値段
+next_price = Math.round.(item_price * 1.15^(item_count));
+
+num個まとめ買い
+next_total_price = Math.round(item_price * Math.pow(1.15, item_count + 1) * (Math.pow(1.15, num) - 1) / 0.15);
+
+console.log(next_total_price)
+
+
+item_price = 5;
+item_count = 1;
+num = 10;
+
+next_price = Math.round(item_price * Math.pow(1.15, item_count));
+console.log(next_price);
+
+next_total_price = Math.round((item_price * Math.pow(1.15, item_count + 1) * (Math.pow(1.15, num) - 1) / 0.15));
+console.log(next_total_price);
+
+document.getElementById("target_ID ").textContent = next_total_price;

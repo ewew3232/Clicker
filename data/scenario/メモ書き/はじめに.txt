@@ -1,0 +1,78 @@
+【基本】
+クリッカーゲームとは、クッキークリッカーを代表とした、シミュレーションゲームです。
+プレイヤーは、特定のアイテムを収集することを目的とします。
+アイテム収集の効率化手段として、施設の増設やスキルの使用があります。
+
+主な機能は、以下の3つです。
+
+1,特定のボタンをクリックすると、アイテムが増加する
+2,1秒ごとに、アイテムの所持数を増加する
+3,ゲーム復帰時に、放置していた間の報酬を増加する
+
+■ksファイルのコメントアウト
+ksファイルは「;」を使います
+ティラノスクリプトの[html]タグ内で<script>タグを使った場合も同様です。
+
+[html]
+<script>
+
+;hogeをアラートさせる
+alert('hoge')
+
+</script>
+[endhtml]
+
+■セーブデータの保存方法
+localStorageに保存します。
+ティラノスクリプトでは、javascriptで定義された変数は、ウィンドウを閉じると消去されてしまいます。
+
+<script>
+
+var hoge = 100;
+localStorage.setItem('piyo', hoge);
+
+//100がアラートされます
+alert(localStorage.getItem('piyo'));
+
+</script>
+
+Auto_Save.ksで、各変数をローカルストレージに保存させます。
+読み込みはVariable_Load.ksです。
+
+【計算式】
+
+■Click_Power
+クリックしたときの生産量は、総生産量の10分の1（小数点四捨五入）
+Click_Power = 1 + Math.round((Total_Power / 10));
+
+■Buildingsm_xxx_Total_Power
+（施設xxxの基本生産量）x（施設xxxの所持数）x（施設xxxの特別係数）x（施設xxxのスキル係数）
+Buildings_xxx_Total_Power　= Buildings_xxx_Power * Buildings_xxx_Count * Buildings_xxx_Extra * Buildings_xxx_Skill;
+
+■Total_Power
+（各施設の総生産量の合計）x（全総生産量に影響するスキル係数）
+Total_Power = (Buildings_xxx_Total_Power + Buildings_yyy_Total_Power ...) * Skill_Power
+
+■Buildings_xxx_Next_Price
+（一つ前の施設価格）x 1.15　※小数点は四捨五入
+function Price(Item_Price,Item_Count) {
+    Buildings_xxx_Next_Price = Math.round(Item_Price * Math.pow(1.15, Item_Count));
+}
+
+例:基本価格が5円の場合
+2個目の値段は　Price(5,1) = 6
+10個目の値段は　Price(5,9) = 18
+
+基本価格がBuildings_xxx_Price円の場合、
+Price(Buildings_xxx_Price,Buildings_xxx_Count)で施設xxxの次の値段が計算できます。
+
+■Buildings_xxx_Total_Price
+上記の応用で複数個まとめ買いするときの計算式。
+Buy_Count個買いたいとする。
+
+function Total_Price(Item_Price,Item_Count,Buy_Count) {
+    Buildings_Total_Price = Math.round((Item_Price * Math.pow(1.15, Item_Count ) * (Math.pow(1.15,Buy_Count) - 1) / 0.15));
+};
+
+基本価格が5円で、所持数10個の状態から、追加で10個購入する場合、
+Total_Price(5,10,10) = 411

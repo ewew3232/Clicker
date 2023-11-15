@@ -1,0 +1,13 @@
+シナリオファイルで、スマホのスクロールを有効にするjsを追加しました。
+なお、セーブ画面などは、個別にhtmlファイルが用意されているので、スクロールされません。
+
+//スマホのスクロールを有効にする
+  $ (function() { 
+    $ ("body").on ("touchmove",function(e) { 
+        $ ("body").removeAttr ('ontouchmove'); 
+        e.stopPropagation (); 
+    }); 
+    $ ("body").on ("touchend",function() { 
+        $ ("body").attr ('ontouchmove','event.preventDefault ()'); 
+    }); 
+});
