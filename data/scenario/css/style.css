@@ -11,6 +11,7 @@
   font-weight: bold;
   letter-spacing: 4px;
   background-image: url(Background.png);/*背景画像*/
+  
 }
 
 /*画面左のBox全体*/
@@ -290,9 +291,9 @@ body {
 .tab-switch:checked+.tab-label+.tab-content {
   padding: 5px;
   opacity: 1;
-  transition: .5s opacity;
   height: 630px;
   width: 100%;
+  transition: opacity 0.1s ease;
 
  /*
   border: 5px solid transparent;
@@ -317,6 +318,8 @@ body {
   z-index: 1;
   padding: 5px;
   color:#f3fdfe;
+  position: relative;
+  z-index:1;
 
   /*ボーダーを画像を使って表現*/
   border: 5px solid transparent;
@@ -414,9 +417,10 @@ body {
   width: 495px;
   height: 240px;
   margin-bottom: 2px;
-  z-index: 1;
   padding: 5px;
   color:#f3fdfe;
+  position: relative;
+  z-index:1;
 
   /*ボーダーを画像を使って表現*/
   border: 5px solid transparent;
@@ -474,7 +478,6 @@ body {
 
 /* 発動ボタン */
 .skill-btn {
-  position: relative;
   width: 70px;
   height: 70px;
   font-weight: bold;
@@ -493,7 +496,7 @@ body {
   font-size: 50px;
   line-height: 38px;
   margin-top: 10px;
-  order: 2;
+  order: 1;
   flex: 1 0;
 }
 
@@ -519,6 +522,8 @@ body {
   z-index: 1;
   padding: 5px;
   color:#f3fdfe;
+  position: relative;
+  z-index:1;
 
   /*ボーダーを画像を使って表現*/
   border: 5px solid transparent;
@@ -659,7 +664,7 @@ body {
   width: 495px;
   height: auto;
   margin-bottom: 2px;
-  z-index: 1;
+  z-index: 0;
   padding: 5px;
   color:#f3fdfe;
 
@@ -689,7 +694,6 @@ body {
 
 /* 閲覧ボタン */
 .story-btn {
-  position: relative;
   width: 70px;
   height: 70px;
   font-weight: bold;
