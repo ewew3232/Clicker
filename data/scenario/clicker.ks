@@ -5,7 +5,6 @@
 [stop_keyconfig]
 
 [html]
-
 <head>
 
 ;css読み込み
@@ -28,7 +27,6 @@
 
 ;画面生成
 [html name=screen]
-
 
 ;画面左
 <div class="left-box">
@@ -66,11 +64,11 @@
     <div class="tab-wrap">
 
         ;施設x1の購入タブ
-        <input id="TAB02-01" type="radio" name="TAB02" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB02-01">x1</label>
+        <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">x1</label>
       
             <div class="tab-content">
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_One_Box">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -99,7 +97,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Two_Box">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -128,7 +126,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Three_Box">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -157,7 +155,7 @@
 
                 </div>
             
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Four_Box">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -186,7 +184,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Five_Box">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -215,7 +213,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Six_Box">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -244,7 +242,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Seven_Box">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -273,7 +271,7 @@
 
                 </div>
             
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Eight_Box">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -302,7 +300,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Nine_Box">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -331,7 +329,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Ten_Box">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -360,7 +358,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Eleven_Box">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -391,11 +389,11 @@
 
             </div>
         ;施設x10の購入タブ
-        <input id="TAB02-02" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-02">x10</label>
+        <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">x10</label>
 
             <div class="tab-content">
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_One_Box_Ten">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -407,7 +405,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_One_Total_Power"></p>
+                        <p id="Buildings_One_Total_Power_Ten"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -424,7 +422,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Two_Box_Ten">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -436,7 +434,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Two_Total_Power"></p>
+                        <p id="Buildings_Two_Total_Power_Ten"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -453,7 +451,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Three_Box_Ten">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -465,7 +463,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Three_Total_Power"></p>
+                        <p id="Buildings_Three_Total_Power_Ten"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -482,7 +480,7 @@
 
                 </div>
             
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Four_Box_Ten">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -494,7 +492,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Four_Total_Power"></p>
+                        <p id="Buildings_Four_Total_Power_Ten"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -511,7 +509,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Five_Box_Ten">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -523,7 +521,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Five_Total_Power"></p>
+                        <p id="Buildings_Five_Total_Power_Ten"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -540,7 +538,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Six_Box_Ten">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -552,7 +550,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Six_Total_Power"></p>
+                        <p id="Buildings_Six_Total_Power_Ten"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -569,7 +567,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Seven_Box_Ten">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -581,7 +579,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Seven_Total_Power"></p>
+                        <p id="Buildings_Seven_Total_Power_Ten"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -598,7 +596,7 @@
 
                 </div>
             
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Eight_Box_Ten">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -610,7 +608,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Eight_Total_Power"></p>
+                        <p id="Buildings_Eight_Total_Power_Ten"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -627,7 +625,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Nine_Box_Ten">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -639,7 +637,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Nine_Total_Power"></p>
+                        <p id="Buildings_Nine_Total_Power_Ten"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -656,7 +654,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Ten_Box_Ten">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -668,7 +666,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Ten_Total_Power"></p>
+                        <p id="Buildings_Ten_Total_Power_Ten"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -685,7 +683,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Eleven_Box_Ten">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -697,7 +695,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Eleven_Total_Power"></p>
+                        <p id="Buildings_Eleven_Total_Power_Ten"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -716,11 +714,11 @@
           
             </div>
         ;施設x100の購入タブ
-        <input id="TAB02-03" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-03">x100</label>
+        <input id="TAB-03" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-03">x100</label>
  
             <div class="tab-content">
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_One_Box_Hundred">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -732,7 +730,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_One_Total_Power"></p>
+                        <p id="Buildings_One_Total_Power_Hundred"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -749,7 +747,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Two_Box_Hundred">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -761,7 +759,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Two_Total_Power"></p>
+                        <p id="Buildings_Two_Total_Power_Hundred"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -778,7 +776,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Three_Box_Hundred">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -790,7 +788,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Three_Total_Power"></p>
+                        <p id="Buildings_Three_Total_Power_Hundred"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -807,7 +805,7 @@
 
                 </div>
             
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Four_Box_Hundred">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -819,7 +817,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Four_Total_Power"></p>
+                        <p id="Buildings_Four_Total_Power_Hundred"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -836,7 +834,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Five_Box_Hundred">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -848,7 +846,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Five_Total_Power"></p>
+                        <p id="Buildings_Five_Total_Power_Hundred"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -865,7 +863,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Six_Box_Hundred">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -877,7 +875,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Six_Total_Power"></p>
+                        <p id="Buildings_Six_Total_Power_Hundred"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -894,7 +892,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Seven_Box_Hundred">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -906,7 +904,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Seven_Total_Power"></p>
+                        <p id="Buildings_Seven_Total_Power_Hundred"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -923,7 +921,7 @@
 
                 </div>
             
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Eight_Box_Hundred">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -935,7 +933,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Eight_Total_Power"></p>
+                        <p id="Buildings_Eight_Total_Power_Hundred"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -952,7 +950,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Nine_Box_Hundred">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -964,7 +962,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Nine_Total_Power"></p>
+                        <p id="Buildings_Nine_Total_Power_Hundred"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -981,7 +979,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Ten_Box_Hundred">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -993,7 +991,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Ten_Total_Power"></p>
+                        <p id="Buildings_Ten_Total_Power_Hundred"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -1010,7 +1008,7 @@
 
                 </div>
 
-                <div class="box-content">
+                <div class="box-content" id="Buildings_Eleven_Box_Hundred">
 
                     <div class="buildings-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -1022,7 +1020,7 @@
 
                     <div class="buildings-gain">
                         <div>生産量</div>
-                        <p id="Buildings_Eleven_Total_Power"></p>
+                        <p id="Buildings_Eleven_Total_Power_Hundred"></p>
                     </div>
 
                     <div class="buildings-count">
@@ -1041,7 +1039,7 @@
 
             </div>
         ;スキルタブ
-        <input id="TAB02-04" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-04">スキル</label>
+        <input id="TAB-04" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-04">スキル</label>
 
             <div class="tab-content">
 
@@ -1157,11 +1155,11 @@
 
             </div>
         ;施設強化の購入タブ
-        <input id="TAB02-05" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-05">施設強化</label>
+        <input id="TAB-05" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-05">施設強化</label>
 
             <div class="tab-content">
 
-                <div class="box-content-extra">
+                <div class="box-content-extra" id="Extra_One_Box">
 
                     <div class="extra-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -1187,7 +1185,7 @@
 
                 </div>
 
-                <div class="box-content-extra">
+                <div class="box-content-extra" id="Extra_Two_Box">
 
                     <div class="extra-icon">
                         <img src="./data/fgimage/icon/Buildings1.png" >
@@ -1215,7 +1213,7 @@
 
             </div> 
         ;ストーリー閲覧タブ
-        <input id="TAB02-06" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-06">ストーリー</label>
+        <input id="TAB-06" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-06">ストーリー</label>
  
             <div class="tab-content">
 
@@ -1273,10 +1271,7 @@
     </div>
 </div>
 
-
-
 [endhtml]
-
 
 ;スクリプト用
 [html]
@@ -1398,11 +1393,18 @@ loadScript('./data/scenario/script/Variable_Load.js')
     .then(function() {
     return loadScript('./data/scenario/script/Bonus.js');
     })
+    .then(function() {
+    return loadScript('./data/scenario/script/Display.js');
+    })
     .catch(function(error) {
         console.error('jsファイル読み込み失敗', error);
     });
 
 }
+
+
+
+
 
 </script>
 

@@ -14,7 +14,7 @@
 　Skill_One_Cooldown_Time -= Idle_Seconds;
 
 2:スキル実行中に、ユーザーが別のシナリオファイルを呼び出す
-⇒ティラノは、ベースのhtml.indexにksファイルから生成したhtml要素を挿入、削除している（？）
+⇒ティラノは、ベースのindex.htmlにksファイルから生成したhtml要素を挿入、削除している（？）
 　つまり、別のksファイルに飛ぶと、html要素が消えるが、変数などは保持される
 　問題点として、別のksファイルを読み込み、再度clicker.ksに戻ってくると、スクリプトなどが2重に読み込まれてしまう現象が起こる
 　結論として、スキル実行中に別のシナリオファイルに飛び、スキル発動時間中にclicker.ksに戻ってくると、2回スキルが実行されてしまう
@@ -521,3 +521,90 @@ Array.prototype.forEach.call(elements, function(element) {
     e.preventDefault();//1回のタップで2回タップされる現象を抑制
   });
 });
+
+
+//スキル発動中は木の葉を降らす
+// 木の葉を生成する関数
+function Skill_Leaf() {
+    var leaf = document.createElement('div');
+    leaf.classList.add('leaf');
+    leaf.style.left = Math.random() * 1280 + 'px';
+    leaf.style.animationDuration = Math.random() * 5 + 5 + 's'; // 5-10秒
+    leaf.innerText = '🍁';//降らせる内容
+    leaf.style.setProperty('--random', Math.random());
+
+    leaf.onclick = function() {
+        Leaf_Click();//木の葉をクリックしたときのイベント
+    };
+
+    document.querySelector('.screen').appendChild(leaf);
+
+    setTimeout(() => {
+        leaf.remove();
+    }, 5000);
+}
+
+//木の葉をクリックしたときのイベント
+function Leaf_Click() {
+    // リーフボーナス獲得
+    var Leaf_Gain = Total_Power * 10; // 10クリック分の報酬獲得
+    Total_Item += Leaf_Gain;
+    Re_Write(Total_Item, '円', 'Total_Item');
+
+    //ポップアップ要素生成
+    var Popup_Element = document.createElement('div');
+    Popup_Element.textContent = '+' + Leaf_Gain; 
+    Popup_Element.classList.add('click-popup', 'fadein');//cssでクリックアイコンの上部に出現させる
+
+    // ポップアップの位置を少しだけランダムに表示 
+    var x = (Math.random() - 0.5) * 20 - 410;
+    var y = (Math.random() - 0.5) * 20 + 330;
+    Popup_Element.style.left = x + 'px';
+    Popup_Element.style.top = y + 'px';
+
+    // ポップアップ要素をページに追加
+    var Pop_Up = document.getElementById('Pop_Up');
+    if (Pop_Up) {
+        Pop_Up.appendChild(Popup_Element);
+
+        // 一定時間後にフェードアウトクラスを追加
+        setTimeout(function() {
+            Popup_Element.classList.remove('fadein');
+            Popup_Element.classList.add('fadeout');
+        }, 300);  // フェードアウト開始時間
+
+        // フェードアウト後にポップアップ要素を削除
+        setTimeout(function() {
+        Pop_Up.removeChild(Popup_Element);
+        }, 1000);  // 削除までの時間
+    }
+}
+
+// 演出用に各スキル関数外で、定義しておく
+var Skill_One_Time, Skill_Two_Time, Skill_Three_Time, Skill_Four_Time, Skill_Five_Time;
+
+// 木の葉を降らすsetIntervalのIDを保存
+var Leaf_ID;
+
+// 一定間隔でこの関数を実行
+function Skill_Check() {
+    // screen要素が存在するか確認
+    Screnn_Check = !!document.querySelector('.screen');
+
+    // screen要素が存在し、いずれかのスキル発動時間が残っているなら、実行
+    if (Screnn_Check && (Skill_One_Time > 0 || Skill_Two_Time > 0 || Skill_Three_Time > 0 || Skill_Four_Time > 0 || Skill_Five_Time > 0)) {
+        // まだSkill_Leafが実行されていなければ実行する
+        if (!Leaf_ID) {
+            Leaf_ID = setInterval(Skill_Leaf, 200);
+        }
+    } else {
+        // screen要素が存在しないか、全てのスキル発動時間が0なら、停止
+        if (Leaf_ID) {
+            clearInterval(Leaf_ID);
+            Leaf_ID = null;
+        }
+    }
+}
+
+// 一定間隔でSkill_Checkを実行
+setInterval(Skill_Check, 500);

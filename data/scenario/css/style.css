@@ -272,7 +272,6 @@ body {
   top: 75px;
   overflow:hidden;
   overflow-y:auto;  
-  -webkit-overflow-scrolling: touch;
 }
 /* アクティブなタブ */
 .tab-switch:checked+.tab-label {
@@ -513,6 +512,23 @@ body {
   flex: 1 0 80%;
 }
 
+
+/*スキル発動中の演出（木の葉を降らす）*/
+.leaf {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  font-size: 25px;
+  animation-name: fall;
+  animation-timing-function: linear;
+  z-index: 5;
+}
+
+@keyframes fall {
+  to {
+      transform: translateX(calc(-640px + 1280px * var(--random))) translateY(1440px);
+  }
+}
 
 /* 強化施設を格納するBOX */
 .box-content-extra {

@@ -23,6 +23,12 @@
 ;タイトルの設定
 ;[title name="now loading"]
 
+;メッセージウィンドウの設定
+[position width=920 height=211 top=501 left=180]
+[position page=fore margint=45 marginl=10 marginr=20 marginb=10 vertical=false opacity="180" radius="0" color="0x000000" ]
+[free name="chara_name_area" layer="message0"]
+[ptext name="chara_name_area" layer="message0" color=0xFFFFFF size=26 x=190 y=511 bold="bold" edge="" shadow=""]
+
 ;タイトル画面表示
 [jump storage="clicker.ks"]
 
